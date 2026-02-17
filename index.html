@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>LIZA FASHION | Premium Store</title>
+<title>LIZA FASHION | Men's Wear</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:#111;
-color:white;
+background:#f8f8f8;
 }
 
 header{
-background:#000;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+background:linear-gradient(45deg,black,#222);
+color:white;
+padding:40px 20px;
+text-align:center;
 }
 
-h1{margin:0;}
+header h1{
+font-size:40px;
+margin:0;
+letter-spacing:2px;
+}
 
-.cart{
-background:#25D366;
-padding:8px 15px;
-border-radius:20px;
-cursor:pointer;
+nav{
+background:#111;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:500;
+}
+
+.hero{
+background:url('https://images.unsplash.com/photo-1520975916090-3105956dac38') center/cover;
+height:350px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:30px;
+font-weight:bold;
+text-shadow:2px 2px 8px black;
 }
 
 section{
@@ -42,38 +62,44 @@ gap:20px;
 }
 
 .card{
-background:#1c1c1c;
+background:white;
 width:260px;
+padding:20px;
 border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,0.5);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
+.card:hover{
+transform:translateY(-10px);
 }
-
-.card h3{margin:10px 0;}
-
-.price{color:#25D366;font-weight:bold;}
 
 button{
-background:#25D366;
+background:black;
 color:white;
-padding:8px 12px;
+padding:10px 15px;
 border:none;
-border-radius:20px;
+border-radius:25px;
 cursor:pointer;
-margin-bottom:15px;
 }
 
 footer{
-background:#000;
+background:black;
+color:white;
 padding:20px;
 text-align:center;
-margin-top:30px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
 }
 </style>
 </head>
@@ -81,33 +107,40 @@ margin-top:30px;
 
 <header>
 <h1>LIZA FASHION</h1>
-<div class="cart" onclick="checkout()">🛒 Cart (<span id="cart-count">0</span>)</div>
+<p>Premium Men's Wear Collection</p>
 </header>
 
+<nav>
+<a href="#">Home</a>
+<a href="#">Collection</a>
+<a href="#">Contact</a>
+</nav>
+
+<div class="hero">
+Festival • Wedding • Party Wear
+</div>
+
 <section>
-<h2>Our Collection</h2>
+<h2>Our Special Collection</h2>
 
 <div class="products">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1516826957135-700dedea698c">
-<h3>Premium Jeans</h3>
-<p class="price">₹1299</p>
-<button onclick="addToCart('Premium Jeans - ₹1299')">Add to Cart</button>
+<h3>Stylish Jeans</h3>
+<p>Premium Denim Collection</p>
+<button>Order Now</button>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
-<h3>Designer Shirt</h3>
-<p class="price">₹999</p>
-<button onclick="addToCart('Designer Shirt - ₹999')">Add to Cart</button>
+<h3>Designer Shirts</h3>
+<p>Party & Formal Wear</p>
+<button>Order Now</button>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1593032465171-8c3d4c0c6e42">
-<h3>Classic Trouser</h3>
-<p class="price">₹1199</p>
-<button onclick="addToCart('Classic Trouser - ₹1199')">Add to Cart</button>
+<h3>Classic Trousers</h3>
+<p>Comfort & Elegant Fit</p>
+<button>Order Now</button>
 </div>
 
 </div>
@@ -116,26 +149,10 @@ margin-top:30px;
 <footer>
 <p>Main Chowk Banaso, Bishnugarh, Hazaribagh</p>
 <p>Contact: 9523219574</p>
+<p>© 2026 LIZA FASHION. All Rights Reserved.</p>
 </footer>
 
-<script>
-let cart = [];
-
-function addToCart(product){
-cart.push(product);
-document.getElementById("cart-count").innerText = cart.length;
-alert(product + " added to cart");
-}
-
-function checkout(){
-if(cart.length === 0){
-alert("Cart is empty!");
-return;
-}
-let message = "Order Details:%0A" + cart.join("%0A");
-window.open("https://wa.me/919523219574?text=" + message);
-}
-</script>
+<a class="whatsapp" href="https://wa.me/919523219574" target="_blank">💬</a>
 
 </body>
 </html>
